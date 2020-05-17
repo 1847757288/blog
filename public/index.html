@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+		<title>
+			<%= htmlWebpackPlugin.options.title %>
+		</title>
+		<style type="text/css">
+			#html-loading {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: rgba(200, 200, 200, .5);
+			}
+		
+			#html-loading-box-jdt {
+				width: 300px;
+				border-radius: 100px;
+				height: 20px;
+				background-color: red;
+				
+			}
+			#jdt-true{
+				width: 10px;
+				border-radius: 100px;
+				height: 100%;
+				background-color: blue;
+				text-align: right;
+				color: white;
+				animation: mymove 4s forwards;
+			}
+			#jdt-text{
+				padding: 0 10px 0 0;
+			}
+			@keyframes mymove {
+			    0 {width: 0%;}
+					100% {width: 99%;}
+			}
+			@-webkit-keyframes mymove {
+			   0 {width: 0%;}
+			   100% {width: 99%;}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="html-loading">
+			<div id="html-loading-box">
+				<div id="html-loading-box-jdt">
+					<div id="jdt-true">
+						<span id="jdt-text">
+							
+						</span>
+					</div>
+				</div>
+				<div id="html-loading-box-text">稍等片刻，网页马上呈现</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+						let el=document.getElementById('jdt-true')
+						let text=document.getElementById('jdt-text')
+			setTimeout(function() {
+				let load=document.getElementById('html-loading')
+				if(load) load.remove()
+			}, 5000)
+		</script>
+		<noscript>
+			<strong>We're sorry but
+				<%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+	</body>
+</html>
