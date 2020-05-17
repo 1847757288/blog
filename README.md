@@ -1,16 +1,16 @@
 # hlpblog
 
-## Project setup
+## 首先安装必须模块
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 然后把项目跑起来
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 使用这个命令打包项目
 ```
 npm run build
 ```
